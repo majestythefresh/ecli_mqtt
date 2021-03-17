@@ -1,0 +1,62 @@
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+
+# IDE
+*.idea
+*.iml
+
+# Generated files
+/web-app/WEB-INF
+build/
+*.[oa]
+*.pyc
+bin/ecli_mqtt_*
+bin/x86/ecli_mqtt_*
+bin/arm/ecli_mqtt_*
+bin/nios2-linux/ecli_mqtt_*
+bin/nios2-uclinux/ecli_mqtt_*
+lib/lib*
+lib/x86/lib*
+lib/arm/lib*
+lib/nios2-linux/lib*
+lib/nios2-uclinux/lib*
+output/*.o
+output/x86/*.o
+output/arm/*.o
+output/nios2-linux/*.o
+output/nios2-uclinux/*.o
+
+# Other source repository archive directories (protects when importing)
+.hg
+.svn
+CVS
+
+# automatic backup files
+*~.nib
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
