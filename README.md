@@ -8,22 +8,22 @@
 
 ## How to Compile:
 
-    ### Use following make targets to compile...
+### Use following make targets to compile...
       - all : compile MQTT Client (MQTT library, Pub and Sub).
-      - ARCH=x86: compile for x86 arch
+      - ARCH=[ x86 | nios2-linux | nios2-uclinux | arm ] clientclean : clean MQTT Client generated files for specific supported arch.
 
-    ### Use following make targets to clean compiled objects and binaries...
+### Use following make targets to clean compiled objects and binaries...
       - clean : clean MQTT Client generated files
       - ARCH=[ x86 | nios2-linux | nios2-uclinux | arm ] clientclean : clean MQTT Client generated files for specific supported arch.
 
-    ### Output:
+### Output:
       - bin folder: broker and pub/sub client binaries to use for host arch.
       - output folder: pub and sub client objects generated for host arch.
       - lib folder: client library objects for host arch
 
 ## Features:
 
-    ### Client:
+### Client:
       - Support MQTT 3.1 and 3.1.1 version
       - Support text messages and file messages
       - Support transfer of messages/files from 0 to 256 MB
@@ -34,18 +34,18 @@
 
 ## How to use it:
 
-    ### Tranfer size:
-        To allow a maximum size for text messages and file messages you can modify the following values at include/libeclimqttconf.h
-        #define ECLI_MAX_MSG_SIZE          4192988   /* 4MB for File messages */
-        #define ECLI_MAX_TXT_MSG_SIZE      1024      /* 1KB for Text messages */
+### Tranfer size:
+    To allow a maximum size for text messages and file messages you can modify the following values at include/libeclimqttconf.h
+    #define ECLI_MAX_MSG_SIZE          4192988   /* 4MB for File messages */
+    #define ECLI_MAX_TXT_MSG_SIZE      1024      /* 1KB for Text messages */
 
-    ### Client:
+### Client:
       - ecli_mqtt_pub -h to display options and flags to set and default values. Publisher.
       - ecli_mqtt_sub -h to display options and flags to set and default values. Subscriber.
 
-    ### Examples:
+### Examples:
 
-        #### Subscriber:
+#### Subscriber:
             - Subscribe to topic in broker with default values, to receive text messages.
               $ ecli_mqtt_sub -i client-id-1 -t devices/ID/sensor1
             - Subscribe to topic in a specific broker, to receive text messages.
@@ -63,7 +63,7 @@
             - Subscribe to topic, to receive file messages and set path to receive it in a loop.
               $ ecli_mqtt_sub -i client-id-8 -t devices/ID/camera -f -o -tmp/recv_image.jpg -l
 
-        #### Publisher:
+#### Publisher:
             - Publish text message to topic in broker with default values.
               $ ecli_mqtt_pub -i client-id-9 -t devices/ID/sensor1 -m "Temperature: 30 C"
             - Publish text message to topic in broker with default values and set flag to receive in a loop.
